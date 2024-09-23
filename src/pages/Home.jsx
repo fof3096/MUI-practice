@@ -42,17 +42,17 @@ export default function Home() {
             </Container>
         </AppBar>
         
-        <Grid2 flexWrap={"wrap"} mt={8} container justifyContent={"space-between"}>
-            <Grid2 size={{lg: 4, md:5, sm: 8}} sx={{ bgcolor: "#0000", display:"flex", flexWrap:"wrap", alignContent: "center", gap: 3 }}>
+        <Container disableGutters sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap:2 }}>
+            <Box maxWidth={400} sx={{ bgcolor: "#0000", display:"flex", flexWrap:"wrap", alignContent: "center", gap: 3 }}>
                 <Typography variant="h3" fontWeight={"bold"}>Maximize skill, minimize budget</Typography>
                 <Typography color="textSecondary" variant="body1">Our modern courses acriss a range of in-demand skills will give you the knowledge you need to live the life you want.</Typography>
                 <Button size="large" disableElevation variant="contained" sx={{ borderRadius: 5, textTransform: "none", backgroundImage: "linear-gradient(to top, rgba(0,178,137,1) 0%, rgba(0,255,196,1) 100%)" }}>Get Started</Button>
-            </Grid2>
+            </Box>
             
-            <Grid2 size={{lg: 4, md:5, sm: 8}}>
+            <Box width={"30%"}>
                 <HomeImg src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Learning" />
-            </Grid2>
-        </Grid2>
+            </Box>
+        </Container>
 
         <Grid2 mt={8} spacing={3} container>
             <Grid2 flexGrow={1} p={3} pr={6} mb={3} sx={{
