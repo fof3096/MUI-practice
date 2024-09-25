@@ -10,8 +10,8 @@ export default function Form() {
           flexWrap:"wrap",
           gap: 2
         }}>
-          <TextField required label="First Name" variant="outlined" sx={{ flexBasis:"48%"}} />
-          <TextField required label="Last Name" variant="outlined" sx={{ flexBasis:"48%"}} />
+          <TextField required label="First Name" variant="outlined" sx={{ flexBasis: 'calc(50% - 8px)'}} />
+          <TextField required label="Last Name" variant="outlined" sx={{ flexBasis: 'calc(50% - 8px)'}} />
           <TextField fullWidth required label="Email Address" variant="outlined" sx={{ borderRadius: 2 }}/>
           <FormControl required fullWidth>
             <FormLabel component={"legend"}>Query Type</FormLabel>
