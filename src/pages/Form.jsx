@@ -10,17 +10,17 @@ export default function Form() {
           flexWrap:"wrap",
           gap: 2
         }}>
-          <TextField label="First Name *" variant="outlined" sx={{ flexBasis:"48%"}} />
-          <TextField label="Last Name *" variant="outlined" sx={{ flexBasis:"48%"}} />
-          <TextField fullWidth label="Email Address *" variant="outlined" sx={{ borderRadius: 2 }}/>
-          <FormControl fullWidth>
-            <FormLabel component={"legend"}>Query Type *</FormLabel>
-            <RadioGroup sx={{ display: "flex", flexDirection:"row", flexWrap: "nowrap", gap: 2 }}>
+          <TextField required label="First Name" variant="outlined" sx={{ flexBasis:"48%"}} />
+          <TextField required label="Last Name" variant="outlined" sx={{ flexBasis:"48%"}} />
+          <TextField fullWidth required label="Email Address" variant="outlined" sx={{ borderRadius: 2 }}/>
+          <FormControl required fullWidth>
+            <FormLabel component={"legend"}>Query Type</FormLabel>
+            <RadioGroup defaultValue={"General Enquiry"} sx={{ display: "flex", flexDirection:"row", flexWrap: "nowrap", gap: 2 }}>
               <FormControlLabel value={"General Enquiry"} control={<Radio/>} label="General Enquiry" sx={{ m:0, flexBasis:"50%" ,border:1, borderColor: "#c4c4c4", borderRadius: 2}}/>
               <FormControlLabel value={"Support Request"} control={<Radio/>} label="Support Request" sx={{ m:0, flexBasis:"50%" ,border:1, borderColor: "#c4c4c4", borderRadius: 2}}/>
             </RadioGroup>
           </FormControl>
-          <TextField fullWidth multiline label="Message *" variant="outlined" rows={4} sx={{ borderRadius: 2 }}/>
+          <TextField fullWidth multiline label="Message" variant="outlined" rows={4} sx={{ borderRadius: 2 }}/>
           <FormControlLabel required control={<Checkbox/>} label="I consent to being concated by the team" />
           <Button fullWidth type="submit" variant="contained" sx={{ borderRadius: 2 }}>Submit</Button>
         </FormControl>
