@@ -1,9 +1,54 @@
-import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Stack, styled, Switch, Toolbar, Typography } from "@mui/material";
 import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useState } from "react";
+
+
+const AntSwitch = styled(Switch)(({ theme }) => ({
+  width: 40,
+  height: 24,
+  padding: 0,
+  display: 'flex',
+  '&:active': {
+    '& .MuiSwitch-thumb': {
+      width: 21, /* Tamaño del ⏺ al hacer click*/
+    },
+    '& .MuiSwitch-switchBase.Mui-checked': {
+      transform: 'translateX(9px)',
+    },
+  },
+  '& .MuiSwitch-switchBase': {
+    padding: 2,
+    '&.Mui-checked': {
+      transform: 'translateX(16px)', /* Posicion del ⏺ */
+      color: '#fff',
+      '& + .MuiSwitch-track': {
+        opacity: 1,
+      },
+    },
+  },
+  '& .MuiSwitch-thumb': {
+    boxShadow: '0 2px 4px 0 rgb(0 35 11 / 20%)',
+    width: 20,
+    height: 20,
+    borderRadius: "100%",
+    transition: theme.transitions.create(['width'], {
+      duration: 200,
+    }),
+  },
+  '& .MuiSwitch-track': {
+    borderRadius: 30 / 2,
+    opacity: 1,
+    backgroundColor: 'rgba(0,0,0,.25)',
+    boxSizing: 'border-box',
+    ...theme.applyStyles('dark', {
+      backgroundColor: 'rgba(255,255,255,.35)',
+    }),
+  },
+}));
+
 
 export default function Bonsai() {
 
@@ -72,6 +117,7 @@ export default function Bonsai() {
               gap: 2
             }}>
                 <Button
+                  disableRipple
                   onClick={handleClick}
                   aria-controls={open ? 'demo-positioned-menu' : undefined}
                   aria-haspopup="true"
@@ -92,10 +138,11 @@ export default function Bonsai() {
 
 
                 <Button
-                onClick={handleClick2}
-                aria-controls={open2 ? 'demo-positioned-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open2 ? 'true' : undefined}
+                  disableRipple
+                  onClick={handleClick2}
+                  aria-controls={open2 ? 'demo-positioned-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open2 ? 'true' : undefined}
                 >
                   Templates {open2 ? <ExpandLess /> : <ExpandMore />}
                 </Button>
@@ -109,9 +156,9 @@ export default function Bonsai() {
                   <MenuItem>Template2</MenuItem>
                 </Menu>
 
-                <Button>Pricing</Button>
+                <Button disableRipple>Pricing</Button>
 
-                <Button>Reviews</Button>
+                <Button disableRipple>Reviews</Button>
             </Box>
 
             <Box display={"flex"} gap={2}>
@@ -121,6 +168,18 @@ export default function Bonsai() {
           </Toolbar>
         </Container>
       </AppBar>
+
+      <Container sx={{ mt:10 }}>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+          <Typography variant="h5">Plans & Pricing</Typography>
+          <Stack position={"relative"} direction="row" spacing={3} sx={{ alignItems: 'end' }}>
+            <Typography variant="caption" fontWeight={"bold"} color="primary" position={"absolute"} bottom={40} right={0}>2 MONTHS FREE!</Typography>
+            <Typography variant="body2">MONTHLY</Typography>
+            <AntSwitch defaultChecked inputProps={{ 'aria-label': 'ant design' }} />
+            <Typography variant="body2">YEARLY</Typography>
+          </Stack>
+        </Toolbar>
+      </Container>
     </div>
   )
 }
