@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useState } from "react";
+import BonsaiCard from "../components/bonsai/BonsaiCard";
 
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
@@ -179,6 +180,10 @@ export default function Bonsai() {
             <Typography variant="body2">YEARLY</Typography>
           </Stack>
         </Toolbar>
+        <Box mt={5} display={"flex"} gap={4}>
+          <BonsaiCard title={"Workflow"} price={19} characteristics={["Unlimited Clients & Projects", "Proposals", "Contracts", "Invoicing & Payments", "Client CRM", "Project Management", "Task & Time Tracking", "iOS, Android, Chrome, & Mac Apps"]}/>
+          <BonsaiCard title={"Workflow Plus"} price={29} characteristics={["Everything in Workflow, plus...", "White-labelled client experience", "Client forms and questionnaires", "Workflow automations", "Subcontracting (client-mode)", "Calendly Integration", "Client portal", "Priority support"]}/>
+        </Box>
       </Container>
     </div>
   )
