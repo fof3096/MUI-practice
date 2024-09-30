@@ -1,16 +1,40 @@
-import { AppBar, Box, Button, Container, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import MenuIcon from '@mui/icons-material/Menu';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import { useState } from "react";
 
 export default function Bonsai() {
 
+  const [anchorEl, setAnchorEl] = useState(null)
+  const [anchorEl2, setAnchorEl2] = useState(null)
+  
+  const open = Boolean(anchorEl)
+  const open2 = Boolean(anchorEl2)
+
   // TODO: https://www.frontendpractice.com/projects/bonsai
+
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClick2 = (event) => {
+    setAnchorEl2(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+  const handleClose2 = () => {
+    setAnchorEl2(null)
+  }
 
   return (
     <div>
       <AppBar position="static" sx={{
         boxShadow: "none",
-        bgcolor: "#0001"
+        bgcolor: "transparent"
       }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -47,9 +71,46 @@ export default function Bonsai() {
               pr: 13,
               gap: 2
             }}>
-                <Button>Product</Button>
-                <Button>Templates</Button>
+                <Button
+                  onClick={handleClick}
+                  aria-controls={open ? 'demo-positioned-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                >
+                  Product {open ? <ExpandLess /> : <ExpandMore />}
+                </Button>
+                <Menu
+                  aria-labelledby="demo-positioned-button"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                >
+                  <MenuItem>Product1</MenuItem>
+                  <MenuItem>Product2</MenuItem>
+                  <MenuItem>Product3</MenuItem>
+                </Menu>
+
+
+                <Button
+                onClick={handleClick2}
+                aria-controls={open2 ? 'demo-positioned-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open2 ? 'true' : undefined}
+                >
+                  Templates {open2 ? <ExpandLess /> : <ExpandMore />}
+                </Button>
+                <Menu
+                  aria-labelledby="demo-positioned-button"
+                  anchorEl={anchorEl2}
+                  open={open2}
+                  onClose={handleClose2}
+                >
+                  <MenuItem>Template1</MenuItem>
+                  <MenuItem>Template2</MenuItem>
+                </Menu>
+
                 <Button>Pricing</Button>
+
                 <Button>Reviews</Button>
             </Box>
 
