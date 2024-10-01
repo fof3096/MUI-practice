@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Stack, styled, Switch, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Paper, Stack, styled, Switch, Toolbar, Typography } from "@mui/material";
 import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -61,6 +61,11 @@ export default function Bonsai() {
 
   // TODO: https://www.frontendpractice.com/projects/bonsai
 
+
+  /* 
+    *Remember
+      Stack is ideal for one-dimensional layouts, while Grid is preferable when you need both vertical and horizontal arrangement.
+  */
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
@@ -184,6 +189,35 @@ export default function Bonsai() {
           <BonsaiCard title={"Workflow"} price={19} characteristics={["Unlimited Clients & Projects", "Proposals", "Contracts", "Invoicing & Payments", "Client CRM", "Project Management", "Task & Time Tracking", "iOS, Android, Chrome, & Mac Apps"]}/>
           <BonsaiCard title={"Workflow Plus"} price={29} characteristics={["Everything in Workflow, plus...", "White-labelled client experience", "Client forms and questionnaires", "Workflow automations", "Subcontracting (client-mode)", "Calendly Integration", "Client portal", "Priority support"]}/>
         </Box>
+      </Container>
+
+      <Container sx={{ mt:10, display: "flex", flexDirection: "column" }}>
+        <Typography alignSelf={"center"} variant="h5">Super charge your work with add-ons</Typography>
+        <Stack mt={6} spacing={2}>
+          <Paper variant="outlined" sx={{ display: "flex", alignItems: "center", p: 4 }}>
+            <Box flexGrow={1}>
+              <Typography variant="h6">Collaborators</Typography>
+              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality</Typography>
+            </Box>
+            <Typography variant="h4">Free</Typography>
+          </Paper>
+
+          <Paper variant="outlined" sx={{ display: "flex", alignItems: "center", p: 4 }}>
+            <Box flexGrow={1}>
+              <Typography variant="h6">Collaborators</Typography>
+              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality</Typography>
+            </Box>
+            <Typography variant="h4">Free</Typography>
+          </Paper>
+
+          <Paper variant="outlined" sx={{ display: "flex", alignItems: "center", p: 4 }}>
+            <Box flexGrow={1}>
+              <Typography variant="h6">Collaborators</Typography>
+              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality</Typography>
+            </Box>
+            <Typography variant="h4">Free</Typography>
+          </Paper>
+        </Stack>
       </Container>
     </div>
   )
