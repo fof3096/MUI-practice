@@ -3,6 +3,7 @@ import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useState } from "react";
 import BonsaiCard from "../components/bonsai/BonsaiCard";
 
@@ -197,25 +198,32 @@ export default function Bonsai() {
           <Paper variant="outlined" sx={{ display: "flex", alignItems: "center", p: 4 }}>
             <Box flexGrow={1}>
               <Typography variant="h6">Collaborators</Typography>
-              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality</Typography>
+              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality.</Typography>
             </Box>
             <Typography variant="h4">Free</Typography>
           </Paper>
 
           <Paper variant="outlined" sx={{ display: "flex", alignItems: "center", p: 4 }}>
             <Box flexGrow={1}>
-              <Typography variant="h6">Collaborators</Typography>
-              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality</Typography>
+              <Typography variant="h6">Partners</Typography>
+              <Typography color="textSecondary" variant="body2">Invite other users for full account and company management.</Typography>
             </Box>
-            <Typography variant="h4">Free</Typography>
+            <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+              <Typography variant="h4">$9</Typography>
+              <Typography variant="caption">/MONTH</Typography>
+            </Box>
           </Paper>
 
           <Paper variant="outlined" sx={{ display: "flex", alignItems: "center", p: 4 }}>
             <Box flexGrow={1}>
-              <Typography variant="h6">Collaborators</Typography>
-              <Typography color="textSecondary" variant="body2">Invite other users to specific projects for limited access and funcionality</Typography>
+              <Typography variant="h6">Bonsai Tax</Typography>
+              <Typography color="textSecondary" variant="body2">Track expenses, identify write-offs, and estimate quarterly taxes easily.</Typography>
+              <Button  endIcon={<ChevronRightIcon />} sx={{ px: 0 }}>LEARN MORE</Button>
             </Box>
-            <Typography variant="h4">Free</Typography>
+            <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+              <Typography variant="h4">$10</Typography>
+              <Typography variant="caption">/MONTH</Typography>
+            </Box>
           </Paper>
         </Stack>
       </Container>

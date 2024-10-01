@@ -17,7 +17,7 @@ export default function BonsaiCard({ title, price, characteristics }) {
             <Divider sx={{ border: 1, borderColor:"#00b289", my: 3 }}/>
             <List dense>
                 {
-                    characteristics.map((characteristic) => <BonsaiListItem title={characteristic}/>)
+                    characteristics.map((characteristic, index) => <BonsaiListItem title={characteristic} key={index}/>)
                 }
             </List>
           </CardContent>
