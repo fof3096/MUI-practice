@@ -2,6 +2,7 @@ import BonsaiPlansPricing from "../components/bonsai/BonsaiPlansPricing";
 import BonsaiAddOns from "../components/bonsai/BonsaiAddOns";
 import BonsaiNavBar from "../components/bonsai/BonsaiNavBar";
 import BonsaiCallToAction from "../components/bonsai/BonsaiCallToAction";
+import BonsaiFrequentlyAskedQuestions from "../components/bonsai/BonsaiFrequentlyAskedQuestions";
 
 
 export default function Bonsai() {
@@ -14,6 +15,7 @@ export default function Bonsai() {
       <BonsaiPlansPricing/>
       <BonsaiAddOns/>
       <BonsaiCallToAction/>
+      <BonsaiFrequentlyAskedQuestions/>
     </div>
   )
 }
