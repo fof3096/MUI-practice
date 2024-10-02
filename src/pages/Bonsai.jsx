@@ -218,7 +218,7 @@ export default function Bonsai() {
             <Box flexGrow={1}>
               <Typography variant="h6">Bonsai Tax</Typography>
               <Typography color="textSecondary" variant="body2">Track expenses, identify write-offs, and estimate quarterly taxes easily.</Typography>
-              <Button  endIcon={<ChevronRightIcon />} sx={{ px: 0 }}>LEARN MORE</Button>
+              <Button size="small" endIcon={<ChevronRightIcon />} sx={{ px: 0 }}>LEARN MORE</Button>
             </Box>
             <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
               <Typography variant="h4">$10</Typography>
