@@ -8,8 +8,6 @@ import BonsaiFooter from "../components/bonsai/BonsaiFooter";
 
 export default function Bonsai() {
 
-  // TODO: https://www.frontendpractice.com/projects/bonsai
-
   return (
     <div>
       <BonsaiNavBar/>
